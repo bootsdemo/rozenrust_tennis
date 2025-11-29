@@ -1,0 +1,7 @@
+{
+  "name": "Rozenrust Tennis Club",
+  "description": "A modern, minimalist website for Tennispark Rozenrust, featuring court reservations, club history, and an AI-powered concierge.",
+  "version": "1.2.0",
+  "backupLabel": "v1.2.0-whatsapp-integration",
+  "requestFramePermissions": []
+}
