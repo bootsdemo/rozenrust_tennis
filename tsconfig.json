@@ -2,7 +2,10 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOMIterable"],
+    
+    // 🚨 FIX 1: Corrected library names and format
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -20,9 +23,9 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* 🚨 CRITICAL FIX: Add 'node' to recognize process.env 🚨 */
+    /* CRITICAL FIX: To recognize process.env */
     "types": ["node"]
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  // 🚨 FIX 2: The reference to the missing tsconfig.node.json has been REMOVED
 }
