@@ -6,7 +6,7 @@ import Reservation from './components/Reservation';
 import Prices from './components/Prices';
 import Lessons from './components/Lessons';
 import Contact from './components/Contact';
-import ClubAssistant from './components/ClubAssistant';
+// 🚨 ClubAssistant import removed
 
 const App: React.FC = () => {
   return (
@@ -23,8 +23,7 @@ const App: React.FC = () => {
 
       <Contact />
       
-      {/* AI Assistant Widget */}
-      <ClubAssistant />
+      {/* 🚨 ClubAssistant component removed */}
     </div>
   );
 };
