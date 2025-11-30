@@ -1,14 +1,30 @@
-// src/App.tsx
-
 import React from 'react';
-// Remove all imports for components like Navigation, Hero, ClubAssistant, etc.
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import History from './components/History';
+import Reservation from './components/Reservation';
+import Prices from './components/Prices';
+import Lessons from './components/Lessons';
+import Contact from './components/Contact';
+import ClubAssistant from './components/ClubAssistant';
 
 const App: React.FC = () => {
   return (
-    // Only return simple, non-conditional HTML
-    <div style={{ padding: '50px', backgroundColor: '#fff', color: '#000' }}>
-      <h1>✅ DEPLOYMENT IS WORKING!</h1>
-      <p>If you see this, the code crash is in one of your components.</p>
+    <div className="relative min-h-screen bg-stone-50">
+      <Navigation />
+      
+      <main>
+        <Hero />
+        <History />
+        <Reservation />
+        <Prices />
+        <Lessons />
+      </main>
+
+      <Contact />
+      
+      {/* AI Assistant Widget */}
+      <ClubAssistant />
     </div>
   );
 };
