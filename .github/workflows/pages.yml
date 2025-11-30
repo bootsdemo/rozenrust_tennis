@@ -1,31 +1,36 @@
-name: Build and deploy to gh-pages branch
+# .github/workflows/pages.yml
+# Please replace the entire content of your pages.yml file with this code.
+
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-
-permissions:
-  contents: write  # <-- CORRECTED: Must be 'write' for the deployment action to push.
-  pages: write     # This is fine, but 'contents: write' is what peaceiris needs.
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout 
         uses: actions/checkout@v4
 
-      - name: Use Node.js 18
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20' 
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build production bundle
+      - name: Build project
         run: npm run build
 
+      # 🚨 NEW CRITICAL STEP: Copies favicon.ico from the root to the dist folder
+      - name: Copy favicon to dist
+        run: cp favicon.ico dist/
+        
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
