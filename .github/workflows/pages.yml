@@ -5,8 +5,8 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: read
-  pages: write
+  contents: write  # <-- CORRECTED: Must be 'write' for the deployment action to push.
+  pages: write     # This is fine, but 'contents: write' is what peaceiris needs.
 
 jobs:
   build-and-deploy:
