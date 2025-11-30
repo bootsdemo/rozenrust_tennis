@@ -1,25 +1,13 @@
-import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-export default defineConfig(({ mode }) => {
-    const env = loadEnv(mode, '.', '');
-    return {
-      // 🚨 CRITICAL CHANGE: Change to './' to force relative paths
-      base: './', 
-      server: {
-        port: 3000,
-        host: '0.0.0.0',
-      },
-      plugins: [react()],
-      define: {
-        'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-        'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
-      },
-      resolve: {
-        alias: {
-          '@': path.resolve(__dirname, '.'),
-        }
-      }
-    };
-});
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  base: './', // <--- This fixes the 404/Blank page on GitHub
+  define: {
+    // This allows the app to use process.env.API_KEY (satisfying strict guidelines)
+    // while actually reading the Vite environment variable VITE_API_KEY used on GitHub/Cloud.
+    'process.env.API_KEY': 'import.meta.env.VITE_API_KEY'
+  }
+})

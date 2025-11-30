@@ -2,10 +2,23 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        tennis: {
+          green: '#1e3a29', // Deep forest green
+          clay: '#c2410c',  // Red clay
+          white: '#f8fafc', // Off-white
+          accent: '#e2e8f0',
+        }
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
+      }
+    },
   },
   plugins: [],
 }
