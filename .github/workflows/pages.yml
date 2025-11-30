@@ -1,4 +1,4 @@
-name: Build and deploy to gh-pages branch
+name: Build, debug, and deploy to gh-pages (debug)
 
 on:
   push:
@@ -15,16 +15,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Use Node.js 18
+      - name: Node & npm versions (diagnostic)
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+      - name: Print versions
+        run: |
+          node -v
+          npm -v
+          echo "--- ENV (selected) ---"
+          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
+          echo "GITHUB_REF=$GITHUB_REF"
+          echo "GITHUB_SHA=$GITHUB_SHA"
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build production bundle
         run: npm run build
+
+      - name: Show dist contents (diagnostic)
+        run: |
+          echo "=== dist listing ==="
+          ls -la ./dist || echo "dist missing"
+          echo "=== dist index head ==="
+          if [ -f ./dist/index.html ]; then sed -n '1,120p' ./dist/index.html; else echo "dist/index.html not found"; fi
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
