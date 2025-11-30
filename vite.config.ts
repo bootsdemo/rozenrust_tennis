@@ -5,7 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      base: '/rozenrust_tennis/',
+      // 🚨 CRITICAL CHANGE: Change to './' to force relative paths
+      base: './', 
       server: {
         port: 3000,
         host: '0.0.0.0',
