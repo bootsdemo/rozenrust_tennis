@@ -4,10 +4,11 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // <--- This fixes the 404/Blank page on GitHub
+  // 1. FIX for GitHub Pages 404/Blank screen: Forces relative paths.
+  base: './', 
   define: {
-    // This allows the app to use process.env.API_KEY (satisfying strict guidelines)
-    // while actually reading the Vite environment variable VITE_API_KEY used on GitHub/Cloud.
-    'process.env.API_KEY': 'import.meta.env.VITE_API_KEY'
+    // 2. FIX for Code Logic Crash: Ensures the old Node.js style (process.env) 
+    // works by pointing it to the Vite environment variable (VITE_GEMINI_API_KEY).
+    'process.env.GEMINI_API_KEY': 'import.meta.env.VITE_GEMINI_API_KEY'
   }
 })
