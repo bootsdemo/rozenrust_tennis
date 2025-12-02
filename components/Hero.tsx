@@ -11,8 +11,9 @@ const Hero: React.FC = () => {
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1622163642998-1ea36b1adde3?q=80&w=2938&auto=format&fit=crop"
-          alt="Tennis Court Clay"
+          // 🚨 FIX: Replaced problematic external Unsplash URL with local, absolute path
+          src="/rozenrust_tennis/public/assets/CourtPicture5.jpeg" 
+          alt="tennis court with net"
           className="w-full h-full object-cover opacity-60 mix-blend-overlay"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-tennis-green/90" />
@@ -21,8 +22,8 @@ const Hero: React.FC = () => {
       <div className="relative z-10 container mx-auto px-6 text-center text-white space-y-6 md:space-y-8">
         <div className="animate-fade-in-up">
            <span className="inline-block py-1 px-3 border border-white/30 rounded-full text-[10px] md:text-xs tracking-[0.2em] uppercase mb-4 md:mb-6 bg-white/10 backdrop-blur-sm">
-            Est. 1935
-          </span>
+             Est. 1935
+           </span>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-2">
             Tennispark <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-stone-200 to-tennis-clay">Rozenrust</span>
