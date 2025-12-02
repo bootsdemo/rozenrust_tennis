@@ -3,6 +3,10 @@ import { SectionId } from '../types';
 import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  // Direct Google Maps embed URL for Tennispark Rozenrust (Veursestraatweg 14)
+  // The 'q' parameter sets the center point and pin location.
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1416.7126131464376!2d4.412495910375681!3d52.0838965997235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c59a35e72d2503%3A0xc665191833777f98!2sVeursestraatweg%2014%2C%202265%20CD%20Leidschendam%2C%20Netherlands!5e0!3m2!1sen!2sus!4v1701379200000!5m2!1sen!2sus";
+
   return (
     <footer id={SectionId.CONTACT} className="bg-tennis-green text-white pt-16 md:pt-24 pb-12">
       <div className="container mx-auto px-6">
@@ -44,27 +48,30 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="flex space-x-6 pt-4">
-               <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-tennis-clay transition-colors"><Instagram size={20}/></a>
-               <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-tennis-clay transition-colors"><Facebook size={20}/></a>
+                <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-tennis-clay transition-colors"><Instagram size={20}/></a>
+                <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-tennis-clay transition-colors"><Facebook size={20}/></a>
             </div>
           </div>
 
-          <div className="h-64 md:h-auto min-h-[250px] md:min-h-[300px] w-full bg-stone-200 rounded-lg overflow-hidden relative">
-             <img 
-               src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2940&auto=format&fit=crop"
-               alt="Map placeholder"
-               className="w-full h-full object-cover opacity-80"
-             />
-             <div className="absolute inset-0 flex items-center justify-center">
-                <a 
-                  href="https://maps.google.com" 
-                  target="_blank" 
-                  rel="noreferrer"
-                  className="bg-white text-tennis-green px-6 py-3 rounded-full shadow-lg font-semibold hover:scale-105 transition-transform text-sm md:text-base"
-                >
-                  View on Google Maps
-                </a>
-             </div>
+          {/* MAP EMBED BLOCK: Replaced static image with live iframe */}
+          <div className="h-64 md:h-auto min-h-[250px] md:min-h-[300px] w-full bg-stone-200 rounded-lg overflow-hidden relative shadow-xl">
+            <iframe
+              title="Google Map of Tennispark Rozenrust"
+              src={mapEmbedUrl}
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            ></iframe>
+            {/* Overlay link for accessibility and better mobile experience */}
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=Veursestraatweg+14%2C+2265+CD+Leidschendam%2C+Netherlands`}
+              target="_blank"
+              rel="noreferrer"
+              className="absolute inset-0 z-10 opacity-0"
+              aria-label="View Tennispark Rozenrust on Google Maps"
+            ></a>
           </div>
         </div>
 
