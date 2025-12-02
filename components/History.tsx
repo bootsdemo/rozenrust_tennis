@@ -36,8 +36,9 @@ const History: React.FC = () => {
           <div className="md:w-1/2 relative w-full order-1 md:order-2">
             <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-lg shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=2942&auto=format&fit=crop" 
-                alt="Tennis Player Serve" 
+                               // 🚨 UPDATED SRC TO NEW FILE IN PUBLIC/ASSETS 🚨
+                  src="/rozenrust_tennis/public/assets/CourtPicture5.jpeg" 
+                  alt="Rozenrust players"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
