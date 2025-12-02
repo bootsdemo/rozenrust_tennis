@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <img
           // 🚨 FIX: Replaced problematic external Unsplash URL with local, absolute path
-          src="/rozenrust_tennis/public/assets/CourtPicture5.jpeg" 
+          src="/rozenrust_tennis/assets/CourtPicture5.jpeg" 
           alt="tennis court with net"
           className="w-full h-full object-cover opacity-60 mix-blend-overlay"
         />
