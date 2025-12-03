@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-stone-200 to-tennis-clay">Rozenrust</span>
           </h1>
           <p className="font-light text-base md:text-xl max-w-2xl mx-auto text-stone-200 leading-relaxed mt-4 md:mt-6 px-4">
-            Experience the all-weather artificial grass in the heart of Leidschendam.
+            Experience the all-weather in the heart of Leidschendam.
             A sanctuary for sport, leisure, and community.
           </p>
         </div>
