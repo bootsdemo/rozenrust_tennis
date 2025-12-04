@@ -1,24 +1,28 @@
 import React from 'react';
-import { SectionId } from '../types';
+import { SectionId } from '../types.ts'; // 🚨 FIX: Explicitly adding .ts extension to resolve path error
 import { ArrowDown } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
     <section 
       id={SectionId.HOME} 
+      // Ensure the section is full-width (w-screen is usually redundant with w-full but reinforces it) and full-height
       className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-tennis-green"
     >
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          // 🚨 FIX: Replaced problematic external Unsplash URL with local, absolute path
           src="/rozenrust_tennis/assets/CourtPicture5.jpeg" 
           alt="tennis court with net"
+          // FIX CONFIRMATION: The w-full h-full object-cover combination is the industry-standard for edge-to-edge background images.
+          // This combination guarantees the image covers 100% of the parent container's area.
           className="w-full h-full object-cover opacity-60 mix-blend-overlay"
         />
+        {/* Gradient overlay to help text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-tennis-green/90" />
       </div>
 
+      {/* Content Container: This is correctly constrained with container mx-auto for good typography */}
       <div className="relative z-10 container mx-auto px-6 text-center text-white space-y-6 md:space-y-8">
         <div className="animate-fade-in-up">
            <span className="inline-block py-1 px-3 border border-white/30 rounded-full text-[10px] md:text-xs tracking-[0.2em] uppercase mb-4 md:mb-6 bg-white/10 backdrop-blur-sm">
