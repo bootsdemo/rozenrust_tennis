@@ -17,7 +17,6 @@ const Hero: React.FC = () => {
   return (
     <section 
       id={SectionId.HOME} 
-      // FIX CONFIRMED: Using w-screen to force edge-to-edge display on all screen sizes, overriding parent constraints.
       className="relative h-screen w-screen overflow-hidden flex items-center justify-center bg-tennis-green"
     >
       {/* Background with Overlay */}
@@ -25,7 +24,6 @@ const Hero: React.FC = () => {
         <img
           src="/rozenrust_tennis/assets/CourtPicture5.jpeg" 
           alt="tennis court with net"
-          // This combination remains correct: w-full h-full object-cover ensures the image fills its inset-0 parent.
           className="w-full h-full object-cover opacity-60 mix-blend-overlay"
         />
         {/* Gradient overlay to help text readability */}
