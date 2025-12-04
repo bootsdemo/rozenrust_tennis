@@ -17,8 +17,9 @@ const Hero: React.FC = () => {
   return (
     <section 
       id={SectionId.HOME} 
-      // FIX CONFIRMED: Using w-screen to force edge-to-edge display on all screen sizes, overriding parent constraints.
-      className="relative h-screen w-screen overflow-hidden flex items-center justify-center bg-tennis-green"
+      // 🚨 AGGRESSIVE FIX: Using w-screen (full viewport width) and adding max-w-none (removes any max-width limit) 
+      // and mx-0 (removes horizontal margin) to force an absolute edge-to-edge display.
+      className="relative h-screen w-screen max-w-none mx-0 overflow-hidden flex items-center justify-center bg-tennis-green"
     >
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
