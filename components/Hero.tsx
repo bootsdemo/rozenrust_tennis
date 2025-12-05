@@ -50,12 +50,21 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 pt-6 md:pt-8 animate-fade-in-up delay-100 w-full max-w-md md:max-w-none mx-auto">
+           {/* UPDATED BUTTON: Become a member - now uses bg-tennis-clay */}
+           <button 
+             // No onClick function yet, as requested
+             className="px-8 py-3 bg-tennis-clay text-white rounded-full font-medium tracking-wide hover:bg-orange-800 transition-colors shadow-lg shadow-orange-900/20 w-full md:w-auto text-sm md:text-base"
+           >
+             Become a member
+           </button>
+           {/* EXISTING BUTTON: Book a Court */}
            <button 
              onClick={() => document.getElementById(SectionId.RESERVATION)?.scrollIntoView({ behavior: 'smooth'})}
              className="px-8 py-3 bg-tennis-clay text-white rounded-full font-medium tracking-wide hover:bg-orange-800 transition-colors shadow-lg shadow-orange-900/20 w-full md:w-auto text-sm md:text-base"
            >
              Book a Court
            </button>
+           {/* EXISTING BUTTON: Discover More */}
            <button 
              onClick={() => document.getElementById(SectionId.HISTORY)?.scrollIntoView({ behavior: 'smooth'})}
              className="px-8 py-3 bg-transparent border border-white text-white rounded-full font-medium tracking-wide hover:bg-white hover:text-tennis-green transition-all w-full md:w-auto text-sm md:text-base"
