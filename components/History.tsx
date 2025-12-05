@@ -17,7 +17,7 @@ const History: React.FC = () => {
               Nestled amongst ancient trees and lush greenery, our intimate park offers a private escape from the daily rush.
             </p>
             <p className="text-base md:text-lg leading-loose text-stone-600 font-light">
-              Our 2 meticulously maintained all-weather courts provide an authentic and personal European tennis experience with consistent playability year-round. 
+              Our two meticulously maintained all-weather courts provide an authentic and personal tennis experience with consistent playability year-round. 
               With a close-knit group of members, Rozenrust welcomes you with a friendly, neighborhood atmosphere where everyone knows your name.
             </p>
 
