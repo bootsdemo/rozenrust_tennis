@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/rozenrust_tennis/assets/CourtPicture5.jpeg" 
+          src="/rozenrust_tennis/assets/CourtPicture1.jpeg" 
           alt="tennis court with net"
           // This combination remains correct: w-full h-full object-cover ensures the image fills its inset-0 parent.
           className="w-full h-full object-cover opacity-60 mix-blend-overlay"
