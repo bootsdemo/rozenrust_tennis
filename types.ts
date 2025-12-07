@@ -1,3 +1,7 @@
+
+/**
+ * Defines the available section IDs used for navigation and anchor links.
+ */
 export enum SectionId {
     HERO = 'home', // FIX 1: Changed HOME to HERO to resolve TS2339
     HISTORY = 'history',
@@ -53,3 +57,4 @@ export interface BlogPost {
     title: string;
     content: string; // The main body text
     imageUrl?: string; // Optional URL for a featured image or thumbnail
+}
