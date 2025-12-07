@@ -1,18 +1,18 @@
 import React from 'react';
-// Core Types: Added '.ts' extension and ensured NavItem is imported
-import { SectionId, NavItem } from './types.ts';
+// Core Types: Removed '.ts' extension for easier resolution
+import { SectionId, NavItem } from './types'; 
 
-// Components: Added '.tsx' extension to all component imports
-import Header from './components/Header.tsx'; 
-import Hero from './components/Hero.tsx';
-import History from './components/History.tsx';
-import Reservation from './components/Reservation.tsx';
-import Prices from './components/Prices.tsx';
-import Lessons from './components/Lessons.tsx';
-import Contact from './components/Contact.tsx';
-import Blog from './components/Blog.tsx'; // NEW: Import the Blog component
-import ClubAssistant from './components/ClubAssistant.tsx'; 
-import GoogleTranslateWidget from './components/GoogleTranslateWidget.tsx'; 
+// Components: Removed '.tsx' extension from all component imports
+import Header from './components/Header'; 
+import Hero from './components/Hero';
+import History from './components/History';
+import Reservation from './components/Reservation';
+import Prices from './components/Prices';
+import Lessons from './components/Lessons';
+import Contact from './components/Contact';
+import Blog from './components/Blog'; // NEW: Import the Blog component
+// import ClubAssistant from './components/ClubAssistant'; // DISABLED
+// import GoogleTranslateWidget from './components/GoogleTranslateWidget'; // DISABLED
 
 // Define navigation items with correct types
 const navItems: NavItem[] = [
@@ -45,15 +45,15 @@ const App: React.FC = () => {
 
       <Contact />
         
-      {/* ASSISTANT & WIDGETS */}
+      {/* ASSISTANT & WIDGETS (DISABLED) 
       <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end space-y-2">
-          {/* Google Translate Widget */}
+          {/* Google Translate Widget * /}
           <div className="p-2 bg-white rounded-lg shadow-lg border border-gray-100">
               <GoogleTranslateWidget />
           </div>
-          {/* Club Assistant Chatbot */}
+          {/* Club Assistant Chatbot * /}
           <ClubAssistant />
-      </div>
+      </div> */}
     </div>
   );
 };
