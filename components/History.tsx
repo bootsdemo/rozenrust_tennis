@@ -13,7 +13,7 @@ const History: React.FC = () => {
             </h2>
             <div className="w-16 h-1 bg-tennis-clay"></div>
             <p className="text-base md:text-lg leading-loose text-stone-600 font-light">
-              Tennispark Rozenrust is a hidden gem in the Dutch tennis community. 
+              Tennispark Rozenrust is a hidden gem in the Dutch tennis community.
               Nestled amongst ancient trees and lush greenery, our intimate park offers a private escape from the daily rush.
             </p>
             <p className="text-base md:text-lg leading-loose text-stone-600 font-light">
