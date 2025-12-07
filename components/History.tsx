@@ -13,11 +13,11 @@ const History: React.FC = () => {
             </h2>
             <div className="w-16 h-1 bg-tennis-clay"></div>
             <p className="text-base md:text-lg leading-loose text-stone-600 font-light">
-              Tennispark Rozenrust is a hidden gem in the Dutch tennis community. 
+              Tennispark Rozenrust is a hidden gem in the Dutch tennis community.
               Nestled amongst ancient trees and lush greenery, our intimate park offers a private escape from the daily rush.
             </p>
             <p className="text-base md:text-lg leading-loose text-stone-600 font-light">
-              Our 2 meticulously maintained red artificial turf courts provide an authentic and personal European tennis experience with consistent playability year-round. 
+              Our two meticulously maintained all-weather courts provide an authentic and personal tennis experience with consistent playability year-round. 
               With a close-knit group of members, Rozenrust welcomes you with a friendly, neighborhood atmosphere where everyone knows your name.
             </p>
 
@@ -37,7 +37,7 @@ const History: React.FC = () => {
             <div className="aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-lg shadow-2xl">
               <img 
                                // 🚨 UPDATED SRC TO NEW FILE IN PUBLIC/ASSETS 🚨
-                  src="/rozenrust_tennis/assets/CourtPicture5.jpeg" 
+                  src="/rozenrust_tennis/assets/CourtPicture8.jpeg" 
                   alt="Rozenrust players"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />

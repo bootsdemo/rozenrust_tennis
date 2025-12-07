@@ -50,7 +50,7 @@ const Reservation: React.FC = () => {
                 Rent Your Own Private Court
               </h3>
               <p className="text-stone-600 leading-relaxed font-light">
-                Imagine owning your own tennis court at Tennispark Rozenrust! The park has two <strong>red artificial turf courts</strong> (completely renewed in 2020 with the very best materials). You can rent a court at a fixed time during the summer and winter season, so no one can bump you off and you never have to wait.
+                Imagine owning your own tennis court at Tennispark Rozenrust! The park has two <strong> all-weather courts</strong> (completely renewed in 2020 with the very best materials). You can rent a court at a fixed time during the summer and winter season, so no one can bump you off and you never have to wait.
               </p>
             </div>
 
