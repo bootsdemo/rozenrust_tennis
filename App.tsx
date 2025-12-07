@@ -1,8 +1,8 @@
 import React from 'react';
-// Core Types: Adding '.ts' extension back, as type files often require it for resolution
-import { SectionId, NavItem } from './types.ts'; 
+// Core Types: Removing '.ts' extension to aid resolution
+import { SectionId, NavItem } from './types'; 
 
-// Components: Using no extension for .tsx files, which sometimes helps resolution
+// Components: Removing '.tsx' extension from all component imports
 import Navigation from './components/Navigation'; 
 import Hero from './components/Hero';
 import History from './components/History';
@@ -14,11 +14,11 @@ import Blog from './components/Blog'; // NEW: Import the Blog component
 // import ClubAssistant from './components/ClubAssistant'; // DISABLED
 // import GoogleTranslateWidget from './components/GoogleTranslateWidget'; // DISABLED
 
-// Define navigation items, including the new 'News' (Blog) link
+// Define navigation items, including the new 'Blog' link
 const navItems: NavItem[] = [
   { name: 'Home', href: SectionId.HERO },
   { name: 'Our History', href: SectionId.HISTORY },
-  { name: 'News', href: SectionId.BLOG }, // ADDED: Blog link
+  { name: 'Blog', href: SectionId.BLOG }, // UPDATED: Link name is 'Blog'
   { name: 'Prices', href: SectionId.PRICES }, 
   { name: 'Contact & Map', href: SectionId.CONTACT },
 ];
