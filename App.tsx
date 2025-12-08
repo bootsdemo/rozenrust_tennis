@@ -9,8 +9,8 @@ import Contact from './components/Contact';
 // 1. IMPORT THE NEW GALLERY COMPONENT
 import Gallery from './components/Gallery';
 
-// Import SectionId from Navigation to ensure smooth scrolling functions correctly
-import { SectionId } from './components/Navigation';
+// The import for 'SectionId' was removed because it was not used directly in App.tsx,
+// resolving the TS6133 compilation error and allowing the build to pass.
 
 const App: React.FC = () => {
   return (
