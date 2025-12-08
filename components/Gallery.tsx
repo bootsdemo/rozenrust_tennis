@@ -5,10 +5,8 @@ import React from 'react';
 // When integrating Instagram, this array will be removed, and the
 // content will be replaced with the Instagram embed code.
 const galleryItems = [
-    { alt: "Bright sunlit clay court", caption: "Our newly resurfaced clay courts." },
-    { alt: "Indoor tennis training facility", caption: "The indoor facility, perfect for winter lessons." },
+    { alt: "Bright all weather court", caption: "Our newly resurfaced clay courts." },
     { alt: "Clubhouse patio with seating", caption: "Relaxing patio area overlooking the main courts." },
-    { alt: "Evening tennis match under lights", caption: "Evening matches under professional lighting." },
     { alt: "A tennis coach giving a lesson", caption: "Group lessons in progress on court 5." },
     { alt: "Tennis team celebrating a victory", caption: "Our successful Rozenrust Men's team!" },
 ];
