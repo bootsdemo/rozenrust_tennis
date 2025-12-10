@@ -60,7 +60,7 @@ const Gallery: React.FC = () => {
         {/* Optional: Add a link to your Instagram profile */}
         <div className="text-center mt-12">
             <a 
-                href="YOUR_INSTAGRAM_PROFILE_LINK" // Don't forget to update this link!
+                href="https://www.instagram.com/tennisparkrozenrust/" // Don't forget to update this link!
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-tennis-green hover:bg-tennis-clay transition duration-150 ease-in-out shadow-lg"
