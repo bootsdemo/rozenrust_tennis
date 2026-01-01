@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8" />
+  <!-- CSP FIX (one change): allow favicon/images from self + https + data -->
+  <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: https:;">
+
   <title>Rozenrust Tennis Club – Membership</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
