@@ -1,7 +1,5 @@
 # .github/workflows/pages.yml
-
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches:
@@ -32,6 +30,12 @@ jobs:
       # Copies favicon.ico from the root to the dist folder
       - name: Copy favicon to dist
         run: cp favicon.ico dist/
+
+      # ✅ NEW: Copy membership page into dist so it gets deployed
+      - name: Copy membership page to dist
+        run: |
+          mkdir -p dist/membership
+          cp -R public/membership/. dist/membership/
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
