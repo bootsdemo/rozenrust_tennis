@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
           role="button"
           className="px-8 py-3 bg-orange-500 text-white rounded-full font-semibold tracking-wide hover:bg-orange-600 transition-colors shadow-lg shadow-orange-900/30 w-full md:w-auto text-sm md:text-base inline-flex items-center justify-center"
 >
-  Member Area (Testing only)
+  Member Area (Testing)
 </a>
            {/* EXISTING BUTTON: Book a Court */}
            <button 
