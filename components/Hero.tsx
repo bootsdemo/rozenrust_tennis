@@ -53,9 +53,9 @@ const Hero: React.FC = () => {
            {/* UPDATED BUTTON: Become a member - now uses bg-tennis-clay */}
            <button 
              // No onClick function yet, as requested
-             className="px-8 py-3 bg-tennis-clay text-white rounded-full font-medium tracking-wide hover:bg-orange-800 transition-colors shadow-lg shadow-orange-900/20 w-full md:w-auto text-sm md:text-base"
+             className="px-8 py-3 bg-orange-500/60 text-white rounded-full font-medium tracking-wide hover:bg-orange-800 transition-colors shadow-lg shadow-orange-900/20 w-full md:w-auto text-sm md:text-base"
            >
-             Become a member
+             Member Area (Coming Soon)
            </button>
            {/* EXISTING BUTTON: Book a Court */}
            <button 
