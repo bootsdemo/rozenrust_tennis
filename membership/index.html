@@ -58,7 +58,7 @@
        * CONSTANTS (from constants.ts)
        *************************/
       const STRIPE_PUBLISHABLE_KEY = "pk_test_51Sg0TnECh0opYVDDRd5hbKvwnhz4nDjEkLpJPfkMz0YuairALPfH16Mxp0F0GzzpM5tODXrl2csHKu63a89NxkjO00WnxAgYzH";
-      const STRIPE_SECRET_KEY = "sk_test_51Sg0TnECh0opYVDDGsHfzr4qc3pvW5UygFx1OJt6egGsC0O3FjE6NwwNwujGeQcDA0PY82zAeqIYGbM4NYaujZTM00Dit0gtlD";
+      // IMPORTANT: Never put STRIPE_SECRET_KEY in the browser.
 
       const SUPABASE_URL = "https://lxxbcaofukuouytqwmav.supabase.co";
       const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx4eGJjYW9mdWt1b3V5dHF3bWF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU4ODE2MTEsImV4cCI6MjA4MTQ1NzYxMX0.NKlylGJDAit-MOpylK03htN6f9yF_ekA3dtnslQJio4";
@@ -286,28 +286,22 @@
           setAppState("PROCESSING");
 
           try {
-            /**
-             * WARNING:
-             * Calling Stripe's secret API directly from the browser will often fail due to CORS,
-             * and exposes your secret key publicly (even if test mode).
-             * You said Option B for now — this keeps your logic as-is for UI testing.
-             */
-            const response = await fetch("https://api.stripe.com/v1/payment_intents", {
+            // Create PaymentIntent via Supabase Edge Function (server-side Stripe secret)
+            const response = await fetch(`${SUPABASE_URL}/functions/v1/create-payment-intent`, {
               method: "POST",
               headers: {
-                "Authorization": `Bearer ${STRIPE_SECRET_KEY}`,
-                "Content-Type": "application/x-www-form-urlencoded"
+                "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+                "Content-Type": "application/json"
               },
-              body: new URLSearchParams({
-                amount: (fee * 100).toString(),
-                currency: "eur",
-                description: `Membership: ${length} - ${type}`,
-                "receipt_email": userData.email
+              body: JSON.stringify({
+                membershipLength: length,
+                membershipType: type,
+                email: userData.email
               })
             });
 
             const paymentIntent = await response.json();
-            if (paymentIntent.error) throw new Error(paymentIntent.error.message);
+            if (!response.ok) throw new Error(paymentIntent?.error || "Failed to create payment intent");
 
             if (!cardElementRef.current) {
               throw new Error("Payment field was not loaded correctly. Please refresh.");
